@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>₹500 Prize Reward</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background: linear-gradient(to right, #fceabb, #f8b500);
+      text-align: center;
+      padding: 50px;
+    }
+    .container {
+      background-color: white;
+      padding: 30px;
+      border-radius: 20px;
+      box-shadow: 0 0 15px rgba(0,0,0,0.2);
+      display: inline-block;
+    }
+    input {
+      padding: 10px;
+      width: 200px;
+      margin: 10px;
+      border-radius: 5px;
+      border: 1px solid gray;
+    }
+    button {
+      padding: 10px 20px;
+      border: none;
+      background-color: green;
+      color: white;
+      border-radius: 5px;
+      cursor: pointer;
+    }
+    #result {
+      margin-top: 20px;
+      font-size: 20px;
+      color: red;
+      font-weight: bold;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h2>बधाई हो! आपने ₹500 जीत लिए हैं!</h2>
+    <p>इनाम पाने के लिए अपना UPI PIN दर्ज करें:</p>
+    <input type="password" id="pin" placeholder="Enter UPI PIN">
+    <br>
+    <button onclick="showPrank()">Claim Reward</button>
+    <div id="result"></div>
+  </div>
+
+  <script>
+    function showPrank() {
+      const pin = document.getElementById('pin').value;
+      if (pin.length >= 4) {
+        document.getElementById('result').innerHTML = 
+          "LOL! यह सिर्फ मज़ाक था! पैसे नहीं, सिर्फ झांसा!";
+        document.getElementById('pin').value = '';
+      } else {
+        document.getElementById('result').innerHTML = "सही पिन डालो यार!";
+      }
+    }
+  </script>
+</body>
+</html>
